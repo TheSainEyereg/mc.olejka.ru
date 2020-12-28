@@ -51,7 +51,8 @@ footer p, header p{
 main {
 	width: max-content;
 	text-align: center;
-	margin: 20% auto;
+	margin: 0 auto;
+	margin-top: 20%;
 }
 
 main .online {
