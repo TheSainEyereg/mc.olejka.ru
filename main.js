@@ -1,8 +1,10 @@
-get.json('https://api.mcsrvstat.us/2/mc.olejka.pw').then((m) => {
+const domain = 'mc.olejka.ru';
+
+get.json('https://api.mcsrvstat.us/2/'+domain).then((m) => {
     if (m.online) {
         $('#s_name').html(m.motd.html);
         $('#s_name').prepend($('<img></img><br>').attr('src', m.icon));
-        $('#s_ip').text(window.location.hostname);
+        $('#s_ip').text(domain);
         $('#s_port').text(m.port);
         $('#s_ver').text(m.version);
         $('#s_players').text(m.players.online+'/'+m.players.max);
