@@ -23,42 +23,22 @@ html, body{
 	scroll-behavior: smooth;
 	transition: .3s;
 }
-
-
-a {
-  color: var(--second-color);
-  transition: .3s;
-}
-
-a:hover {
-  color: var(--link-color);
-  transition: .0s;
-}
-
-p {
-  transition: .3s;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Comfortaa';
 	margin: 0;
 }
-
-footer p, header p{
-	font-family: 'Comfortaa';
-}
+footer p, header p{font-family: 'Comfortaa';}
 
 main {
-	width: max-content;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
 	text-align: center;
-	margin: 0 auto;
-	margin-top: 15%;
 }
 
-main .online {
-	margin-top: 10px;
-}
-
+main img{image-rendering: pixelated;}
+main .online {margin-top: 10px;}
 main .online ul {
 	padding: 0;
 	list-style: none;
@@ -72,26 +52,10 @@ footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	right: 0;
 	text-align: center;
-}
-
-footer p {
-	margin: 0;
-}
-
-.btn {
-	display: inline-block;
-	padding: 0.3em 1em;
-	text-decoration: none;
-	background: var(--second-color);
-	color: var(--first-color);
-	border: solid 1px var(--second-color);
-	border-radius: 5px;
-	transition: .3s;
-}
-
-.btn:hover {
-	background: rgba(255, 255, 255, 0);
-	border: dashed 1px var(--second-color);
-	color: var(--second-color);
+	font-weight: 900;
+	margin-bottom: 10px;
+	letter-spacing: .5px;
+	user-select: none;
 }
