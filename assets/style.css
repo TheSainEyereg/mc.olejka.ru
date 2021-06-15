@@ -1,0 +1,185 @@
+@import url('https://fonts.olejka.ru/Ubuntu.css'); /* Default font */
+@import url('https://fonts.olejka.ru/VK-Sans-Display.css');
+
+
+:root {
+    /*Const colors*/
+    --dark-first: #010101;
+    --dark-second: #88888888;
+    --dark-text-first: #ebebeb;
+    --dark-text-second: #7c7c7c;
+    --dark-alt: #036de6;
+
+    --light-first: #fefefe;
+    --light-second: #88888888;
+    --light-text-first: #232323;
+    --light-text-second: #B4B4B4;
+    --light-alt: #0C84FF;
+
+}
+body.light {
+    --first-color:var(--light-first);
+    --second-color:var(--light-second);
+    --first-text-color:var(--light-text-first);
+    --second-text-color:var(--light-text-second);
+    --overlay-color:var(--light-overlay);
+    --alt-color:var(--light-alt);
+}
+body.dark {
+    --first-color:var(--dark-first);
+    --second-color:var(--dark-second);
+    --first-text-color:var(--dark-text-first);
+    --second-text-color:var(--dark-text-second);
+    --overlay-color:var(--dark-overlay);
+    --alt-color:var(--dark-alt);
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	background-color: var(--first-color);
+	color: var(--first-text-color);
+	font-family: 'Ubuntu', sans-serif;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: .3s;
+	font-size: 15pt;
+	user-select: none;
+}
+
+h1, h2, h3 {
+	font-family: 'VK Sans Display';
+	margin: 0;
+}
+a {color: var(--alt-color);}
+footer, main .players {font-family: 'VK Sans Display';}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+		filter: blur(0px);
+	}
+	50% {
+		opacity: 0;
+		filter: blur(5px);
+	}
+	100% {
+		opacity: 1;
+		filter: blur(0px);
+	}
+}
+.overlay {
+	font-size: 22pt;
+	background: var(--first-color);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 999;
+}
+.overlay h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
+	z-index: 1000;
+}
+.overlay h1 span {
+	font-size: 18pt;
+    vertical-align: text-top;
+}
+.overlay.loading h1 span {
+	color: #ffff00;
+	animation: blinking 1s ease-in-out infinite;
+}
+.overlay.offline h1 span {
+	color: #ff0000;
+}
+
+main {
+	width: 500px;
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
+}
+main .flexbox {display: flex;}
+
+main .flexbox .icon {
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+main .flexbox .icon img {
+	height: 100%;
+	image-rendering: pixelated;
+}
+
+main .flexbox .info {text-align: left;}
+main .flexbox .info .connect {margin: 10px 0;}
+main .flexbox .info .connect span {
+	user-select: text;
+	background: var(--second-color);
+	padding: 3px;
+	border-radius: 5px;
+}
+main .flexbox .info .connect span:hover {opacity: 0.8; cursor: pointer;}
+main .flexbox .info .connect span.copied {background: #036de6;}
+main .flexbox .info .connect span.copied:hover {opacity: 1;}
+
+main .players {
+	border-top: 1px solid var(--first-text-color);
+	margin-top: 15px;
+	padding-top: 10px;
+}
+main .players ul {
+	padding: 0;
+	list-style: none;
+	width: fit-content;
+	margin: 10px auto;
+}
+main .players ul li {
+	padding: 2.5px 12px;
+	margin-bottom: 5px;
+    border-top: 1px solid var(--second-text-color);
+    border-bottom: 1px solid var(--second-text-color);
+	user-select: text;
+}
+
+main #copyPlace {display: none;}
+
+footer, footer a {
+	position: fixed;
+	padding: 0 5px;
+	margin-bottom: 5px;
+}
+footer {
+	z-index: 1001;
+	color: var(--first-text-color);
+	font-size: 10pt;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	font-weight: 900;
+	letter-spacing: .5px;
+	user-select: none;
+}
+footer a {
+	position: fixed;
+	right: 0;
+}
+
+@media screen and (max-width: 1550px) {footer {letter-spacing: 0;}}
+@media screen and (max-width: 550px) {
+	main {width: fit-content;}
+	main .flexbox {display: block;}
+	main .flexbox .info {text-align: center;}
+	main .flexbox .icon {width: 100%;}
+}
+@media screen and (max-width: 405px) {main {font-size: 12pt;}}
