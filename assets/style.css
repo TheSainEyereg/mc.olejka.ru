@@ -43,10 +43,11 @@ html, body{
 	background-color: var(--first-color);
 	color: var(--first-text-color);
 	font-family: 'Ubuntu', sans-serif;
+	font-size: 15pt;
+	font-synthesis: style;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 	transition: .3s;
-	font-size: 15pt;
 	user-select: none;
 }
 
