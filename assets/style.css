@@ -101,7 +101,7 @@ footer, main .players {font-family: 'VK Sans Display';}
 }
 
 main {
-	width: 500px;
+	width: 600px;
 	z-index: 1;
 	position: absolute;
 	top: 50%;
@@ -109,16 +109,21 @@ main {
 	transform: translateY(-50%) translateX(-50%);
 	text-align: center;
 }
-main .flexbox {display: flex;}
+main .flexbox {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
 
 main .flexbox .icon {
-	width: 40%;
+	width: 150px;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 main .flexbox .icon img {
-	height: 100%;
+	width: 100%;
 	image-rendering: pixelated;
 }
 
@@ -176,11 +181,10 @@ footer a {
 	right: 0;
 }
 
-@media screen and (max-width: 1550px) {footer {letter-spacing: 0;}}
+@media screen and (max-width: 1550px) {footer {letter-spacing: 0}}
 @media screen and (max-width: 550px) {
-	main {width: fit-content;}
-	main .flexbox {display: block;}
-	main .flexbox .info {text-align: center;}
-	main .flexbox .icon {width: 100%;}
+	main {width: fit-content}
+	main .flexbox {display: block}
+	main .flexbox .info {text-align: center}
 }
-@media screen and (max-width: 405px) {main {font-size: 12pt;}}
+@media screen and (max-width: 405px) {main {font-size: 12pt}}

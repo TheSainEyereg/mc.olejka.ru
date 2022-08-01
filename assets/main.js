@@ -1,12 +1,16 @@
 const domain = "mc.olejka.ru";
 theme.current = "dark";
+
 ready(_ => {
-    const overlay = el("#overlay");
+	const overlay = el("#overlay"), footer = el("footer");
+
+	footer.innerHTML = `&copy;Copyright ${new Date().getFullYear()} olejka.ru<a href="https://status.olejka.ru/" target="blank">Status</a>`
+
     data.get(`https://api.mcsrvstat.us/2/${domain}`, m => {
         if (m.online) {
             overlay.remove();
 
-            el("#icon").setAttribute("src", m.icon);
+            el("#icon").setAttribute("src", m.icon || "/assets/icons/noicon.png");
             el("#motd").innerHTML = m.motd.html;
             el("#version").innerHTML = m.version;
 
