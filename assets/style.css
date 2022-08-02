@@ -96,9 +96,7 @@ footer, main .players {font-family: 'VK Sans Display';}
 	color: #ffff00;
 	animation: blinking 1s ease-in-out infinite;
 }
-.overlay.offline h1 span {
-	color: #ff0000;
-}
+.overlay.offline h1 span {color: #ff0000}
 
 main {
 	width: 600px;
@@ -127,17 +125,17 @@ main .flexbox .icon img {
 	image-rendering: pixelated;
 }
 
-main .flexbox .info {text-align: left;}
-main .flexbox .info .connect {margin: 10px 0;}
+main .flexbox .info {text-align: left}
+main .flexbox .info .connect {margin: 10px 0}
 main .flexbox .info .connect span {
 	user-select: text;
 	background: var(--second-color);
 	padding: 3px;
 	border-radius: 5px;
 }
-main .flexbox .info .connect span:hover {opacity: 0.8; cursor: pointer;}
-main .flexbox .info .connect span.copied {background: #036de6;}
-main .flexbox .info .connect span.copied:hover {opacity: 1;}
+main .flexbox .info .connect span:hover {opacity: 0.8; cursor: pointer}
+main .flexbox .info .connect span.copied {background: #036de6}
+main .flexbox .info .connect span.copied:hover {opacity: 1}
 
 main .players {
 	border-top: 1px solid var(--first-text-color);
@@ -158,7 +156,7 @@ main .players ul li {
 	user-select: text;
 }
 
-main #copyPlace {display: none;}
+main #copyPlace {display: none}
 
 footer, footer a {
 	position: fixed;
@@ -176,10 +174,7 @@ footer {
 	letter-spacing: .5px;
 	user-select: none;
 }
-footer a {
-	position: fixed;
-	right: 0;
-}
+footer a {right: 0}
 
 @media screen and (max-width: 1550px) {footer {letter-spacing: 0}}
 @media screen and (max-width: 550px) {
